@@ -9,7 +9,15 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
+    <header>
+      <% if current_user %>
+        <%= current_user.name %>さん
+        <%= link_to "ログアウト", log_out_path %>
+      <% else  %>
+        ゲストさん
+        <%= button_to "Googleでログイン", "/auth/google_oauth2",　method: :post, data: { turbo: false } %>
+      <% end %>
+    </header>
   <body>
     <%= yield %>
   </body>

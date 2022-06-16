@@ -7,8 +7,19 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
-
+ 
   def create
-    render json: { url: root_path }
+    @post = Post.new(posts_params)
+
+    if @post.save
+      render json: { url: root_path }
+    else
+      render :new
+    end
+
+  end
+
+  def posts_params
+    params.permit(:title, :body, :audio)
   end
 end

@@ -13,7 +13,10 @@
 
      <button class = "btn btn-danger " id="result" >投稿する</button>
     <%= form_with model: @post, id: "voiceform", local: true do |f| %>
-     <% end %>
+      <%= f.hidden_field :audio  %>
+      <%= f.text_field :title  %>
+      <%= f.text_field :body  %>
+    <% end %>
 
 
 			<!-- <audio src="/outfoxing.mp3" crossorigin="anonymous" ></audio> -->

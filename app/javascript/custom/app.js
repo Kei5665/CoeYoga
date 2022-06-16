@@ -159,6 +159,8 @@ result.onclick = function() {
     var myBlob = this.response;
       // myBlob is now the blob that the object URL pointed to.
     let formData = new FormData();
+      formData.append('title', document.querySelector('#post_title').value);
+      formData.append('body', document.querySelector('#post_body').value);
       formData.append('audio', myBlob, 'voice.wav');
 
       axios.post(document.querySelector('#voiceform').action,  formData, {

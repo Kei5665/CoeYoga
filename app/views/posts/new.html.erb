@@ -1,0 +1,24 @@
+<div class='top-inner-text', id='button'>
+    <h1>録音</h1>
+
+    <button class = "btn btn-primary" id="rec" >録音する</button>
+
+    <button class = "btn btn-primary" id="stop" >録音停止</button>
+
+    <button class = "btn btn-primary" id="playid" >再生する</button>
+
+    <audio id="play" controls></audio>
+
+    <a id="download">Download</a>
+
+     <button class = "btn btn-danger " id="result" >投稿する</button>
+    <%= form_with model: @post, id: "voiceform", local: true do |f| %>
+      <%= f.hidden_field :audio  %>
+      <%= f.text_field :title  %>
+      <%= f.text_field :body  %>
+    <% end %>
+
+
+			<!-- <audio src="/outfoxing.mp3" crossorigin="anonymous" ></audio> -->
+      <!-- 			type="audio/mpeg" -->
+  </div>

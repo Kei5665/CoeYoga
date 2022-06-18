@@ -29,7 +29,7 @@ rec.onclick = function() {
           console.log('録音しています');
           audioData = [];
           audioContext = new AudioContext();
-          audio_sample_rate = audioContext.sampleRate;
+          audio_sample_rate = 11025;
           scriptProcessor = audioContext.createScriptProcessor(bufferSize, 1, 1);
           mediastreamsource = audioContext.createMediaStreamSource(stream);
           mediastreamsource.connect(scriptProcessor);
